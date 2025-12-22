@@ -6,6 +6,8 @@ Conductor brings context-driven development to Claude Code. It turns your workfl
 
 Inspired by Google: https://developers.googleblog.com/conductor-introducing-context-driven-development-for-gemini-cli/
 
+Repository: https://github.com/pilotparpikhodjaev/conductor_cc
+
 ## Why Conductor
 
 - Plan before you build with structured specs and plans
