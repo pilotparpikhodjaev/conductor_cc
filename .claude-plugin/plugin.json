@@ -1,0 +1,10 @@
+{
+  "name": "conductor",
+  "description": "Conductor: Context-driven development for Claude Code",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": {
+    "name": "Javokhirbek | TenXEngineer",
+    "email": "dev.parpikhodjaev@gmail.com"
+  }
+}
