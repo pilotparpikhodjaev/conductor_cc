@@ -21,6 +21,13 @@ Repository: https://github.com/pilotparpikhodjaev/conductor_cc
 claude --plugin-dir /path/to/conductor_cc
 ```
 
+## Install (marketplace)
+
+```text
+/plugin marketplace add https://github.com/pilotparpikhodjaev/conductor_cc
+/plugin install conductor@conductor-cc
+```
+
 ## Marketplace
 
 This repository is structured as a Claude Code plugin with `.claude-plugin/plugin.json`, ready for marketplace publishing. Once the marketplace listing is live, anyone will be able to install it from the Claude Code plugin manager. Until then, use `--plugin-dir` for local installation.
