@@ -1,11 +1,60 @@
 # Conductor Context
 
-If a user mentions a "plan" or asks about the plan, and they have used the conductor extension in the current session, they are likely referring to the `conductor/tracks.md` file or one of the track plans (`conductor/tracks/<track_id>/plan.md`).
+Conductor is a context-driven development framework for Claude Code. It transforms the AI agent into a disciplined project manager that follows a strict protocol: **Context → Spec & Plan → Implement**.
+
+## Core Concepts
+
+### What is a Track?
+
+A **Track** is a high-level unit of work, such as a feature, bug fix, or chore. Each track contains:
+
+- `spec.md` - Detailed requirements and acceptance criteria
+- `plan.md` - Phased implementation plan with tasks and sub-tasks
+- `metadata.json` - Track metadata (type, status, timestamps)
+
+### Project Context Files
+
+When Conductor is set up, it creates these context files in `conductor/`:
+
+- `product.md` - Product vision, users, goals
+- `product-guidelines.md` - Brand voice, visual identity
+- `tech-stack.md` - Languages, frameworks, databases
+- `workflow.md` - TDD workflow, commit strategy, quality gates
+- `code_styleguides/` - Language-specific style guides
+- `tracks.md` - Master list of all tracks
 
 ## Available Commands
 
-- `/conductor:setup` - Initialize the Conductor environment for your project
-- `/conductor:new-track` - Create a new feature/bug track with spec and plan
-- `/conductor:implement` - Execute tasks from a track's plan
-- `/conductor:status` - Display current project progress
-- `/conductor:revert` - Git-aware revert of tracks, phases, or tasks
+| Command                | Description                                           |
+| ---------------------- | ----------------------------------------------------- |
+| `/conductor:setup`     | Initialize the Conductor environment for your project |
+| `/conductor:new-track` | Create a new feature/bug track with spec and plan     |
+| `/conductor:implement` | Execute tasks from a track's plan                     |
+| `/conductor:status`    | Display current project progress                      |
+| `/conductor:revert`    | Git-aware revert of tracks, phases, or tasks          |
+
+## Understanding References
+
+When a user mentions:
+
+- **"the plan"** → Likely refers to `conductor/tracks.md` or `conductor/tracks/<track_id>/plan.md`
+- **"the spec"** → Likely refers to `conductor/tracks/<track_id>/spec.md`
+- **"the track"** → Refers to the current active track
+- **"the workflow"** → Refers to `conductor/workflow.md`
+
+## Task Status Markers
+
+In `plan.md` and `tracks.md` files:
+
+- `[ ]` - Pending (not started)
+- `[~]` - In Progress
+- `[x]` - Completed (with commit SHA appended)
+
+## Token Optimization
+
+Conductor's context-driven approach involves reading project context files. To minimize token consumption:
+
+- Respect `.claudeignore` and `.gitignore` patterns
+- Use `git ls-files` for efficient file listing
+- Prioritize manifest files (`package.json`, `Cargo.toml`, etc.)
+- Read only first/last 20 lines of files over 1MB
