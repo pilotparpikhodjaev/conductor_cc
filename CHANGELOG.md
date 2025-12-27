@@ -5,6 +5,15 @@ All notable changes to Conductor for Claude Code will be documented in this file
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2] - 2025-12-27
+
+### Fixed
+
+- **Plugin Manifest Paths** - Fixed agent and skill path formats in plugin.json
+  - Agents now use `./agents/<name>.md` format (required `./` prefix and `.md` suffix)
+  - Skills now use `./skills/<name>` format (required `./` prefix)
+  - Fixes "Invalid input: must start with './', must end with '.md'" validation errors
+
 ## [0.2.1] - 2025-12-27
 
 ### Added
