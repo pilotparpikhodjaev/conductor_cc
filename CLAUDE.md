@@ -50,6 +50,18 @@ In `plan.md` and `tracks.md` files:
 - `[~]` - In Progress
 - `[x]` - Completed (with commit SHA appended)
 
+## Available Skills
+
+Conductor provides skills that Claude can invoke automatically based on context:
+
+| Skill            | Description                                                                  |
+| ---------------- | ---------------------------------------------------------------------------- |
+| `style-guide`    | Apply language-specific code style rules (Python, TS, Go, Rust, Swift, Dart) |
+| `context-loader` | Efficiently load project context with token optimization                     |
+| `track-manager`  | Manage track status, task markers, and phase transitions                     |
+
+Skills are located in `skills/` and are auto-invoked when relevant to the task.
+
 ## Token Optimization
 
 Conductor's context-driven approach involves reading project context files. To minimize token consumption:
@@ -58,3 +70,4 @@ Conductor's context-driven approach involves reading project context files. To m
 - Use `git ls-files` for efficient file listing
 - Prioritize manifest files (`package.json`, `Cargo.toml`, etc.)
 - Read only first/last 20 lines of files over 1MB
+- Use the `context-loader` skill for efficient context loading
