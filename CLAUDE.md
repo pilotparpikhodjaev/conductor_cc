@@ -75,6 +75,17 @@ Use the Task tool with the context-explorer agent to explore this project
 - **Token Efficiency**: Only results returned, not raw file contents
 - **Focused Output**: Each subagent returns structured, concise summaries
 - **Parallel Execution**: Multiple subagents can run simultaneously
+## Available Skills
+
+Conductor provides skills that Claude can invoke automatically based on context:
+
+| Skill            | Description                                                                  |
+| ---------------- | ---------------------------------------------------------------------------- |
+| `style-guide`    | Apply language-specific code style rules (Python, TS, Go, Rust, Swift, Dart) |
+| `context-loader` | Efficiently load project context with token optimization                     |
+| `track-manager`  | Manage track status, task markers, and phase transitions                     |
+
+Skills are located in `skills/` and are auto-invoked when relevant to the task.
 
 ## Token Optimization
 
@@ -85,3 +96,4 @@ Conductor's context-driven approach involves reading project context files. To m
 - Prioritize manifest files (`package.json`, `Cargo.toml`, etc.)
 - Read only first/last 20 lines of files over 1MB
 - Use subagents for context-heavy operations
+- Use the `context-loader` skill for efficient context loading

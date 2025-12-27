@@ -21,5 +21,11 @@
     "agents/spec-builder",
     "agents/plan-generator",
     "agents/code-reviewer"
+    "skills"
+  ],
+  "skills": [
+    "skills/style-guide",
+    "skills/context-loader",
+    "skills/track-manager"
   ]
 }
