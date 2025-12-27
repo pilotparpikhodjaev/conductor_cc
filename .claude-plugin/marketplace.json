@@ -11,8 +11,8 @@
     {
       "name": "conductor",
       "source": {
-        "source": "github",
-        "repo": "pilotparpikhodjaev/conductor_cc"
+        "source": "git",
+        "url": "https://github.com/pilotparpikhodjaev/conductor_cc.git"
       },
       "description": "Conductor: Context-driven development for Claude Code",
       "version": "0.2.0",
