@@ -50,6 +50,32 @@ In `plan.md` and `tracks.md` files:
 - `[~]` - In Progress
 - `[x]` - Completed (with commit SHA appended)
 
+## Subagents for Context Hygiene
+
+Conductor provides specialized subagents that run in isolated context windows, preventing main conversation pollution:
+
+| Subagent           | Purpose                     | When to Use             |
+| ------------------ | --------------------------- | ----------------------- |
+| `context-explorer` | Explore project structure   | Starting work on tracks |
+| `spec-builder`     | Create specifications       | `/conductor:new-track`  |
+| `plan-generator`   | Create implementation plans | After spec is ready     |
+| `code-reviewer`    | Review code changes         | Before commits          |
+
+### How to Use Subagents
+
+Invoke via the Task tool:
+
+```
+Use the Task tool with the context-explorer agent to explore this project
+```
+
+### Benefits
+
+- **Isolated Context**: Heavy exploration doesn't pollute main conversation
+- **Token Efficiency**: Only results returned, not raw file contents
+- **Focused Output**: Each subagent returns structured, concise summaries
+- **Parallel Execution**: Multiple subagents can run simultaneously
+
 ## Token Optimization
 
 Conductor's context-driven approach involves reading project context files. To minimize token consumption:
@@ -58,3 +84,4 @@ Conductor's context-driven approach involves reading project context files. To m
 - Use `git ls-files` for efficient file listing
 - Prioritize manifest files (`package.json`, `Cargo.toml`, etc.)
 - Read only first/last 20 lines of files over 1MB
+- Use subagents for context-heavy operations
