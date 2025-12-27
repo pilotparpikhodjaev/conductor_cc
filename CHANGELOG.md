@@ -5,6 +5,22 @@ All notable changes to Conductor for Claude Code will be documented in this file
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2025-12-27
+
+### Added
+
+- **Changelog & Versioning Protocol** in CLAUDE.md
+  - Mandatory pre-commit changelog updates
+  - Versioning strategy table (Plugin vs Release scope)
+  - Pre-commit checklist with version bump rules
+  - Example workflow for proper changelog maintenance
+
+### Fixed
+
+- **Marketplace Schema** - Changed source type from `"git"` to `"url"` for schema validation
+  - Official Claude Code plugin docs require `"source": "url"` for Git URLs
+  - Fixes "Invalid schema: plugins.0.source: Invalid input" error
+
 ## [0.2.0] - 2025-12-27
 
 ### Added

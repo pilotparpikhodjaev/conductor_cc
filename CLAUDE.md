@@ -75,6 +75,7 @@ Use the Task tool with the context-explorer agent to explore this project
 - **Token Efficiency**: Only results returned, not raw file contents
 - **Focused Output**: Each subagent returns structured, concise summaries
 - **Parallel Execution**: Multiple subagents can run simultaneously
+
 ## Available Skills
 
 Conductor provides skills that Claude can invoke automatically based on context:
@@ -97,3 +98,66 @@ Conductor's context-driven approach involves reading project context files. To m
 - Read only first/last 20 lines of files over 1MB
 - Use subagents for context-heavy operations
 - Use the `context-loader` skill for efficient context loading
+
+## Changelog & Versioning Protocol
+
+**MANDATORY: Before every commit, update CHANGELOG.md with the changes being committed.**
+
+### Versioning Strategy
+
+| Change Type      | Version Scope | Example                       |
+| ---------------- | ------------- | ----------------------------- |
+| Plugin structure | Plugin        | `plugin.json`, `commands/`    |
+| Skills/Subagents | Plugin        | `skills/`, `agents/`          |
+| Core features    | Release       | New commands, major refactors |
+| Bug fixes        | Patch         | Schema fixes, typos           |
+| Documentation    | Patch         | README, CLAUDE.md updates     |
+| Breaking changes | Major release | API changes, renamed commands |
+
+### Changelog Format
+
+```markdown
+## [X.Y.Z] - YYYY-MM-DD
+
+### Added
+
+- New features
+
+### Changed
+
+- Modifications to existing features
+
+### Fixed
+
+- Bug fixes
+
+### Removed
+
+- Removed features
+```
+
+### Pre-Commit Checklist
+
+Before running `git commit`:
+
+1. **Update CHANGELOG.md** with all changes in this commit
+2. **Bump version** in relevant files:
+   - `plugin.json` → for plugin changes
+   - `marketplace.json` → for distribution updates
+   - `package.json` → if applicable
+3. **Use semantic versioning**: MAJOR.MINOR.PATCH
+4. **Include commit type** in message: `feat`, `fix`, `docs`, `refactor`, `chore`
+
+### Example Workflow
+
+```bash
+# 1. Make changes
+# 2. Update CHANGELOG.md with entry
+# 3. Bump version if needed
+# 4. Commit with descriptive message
+git add .
+git commit -m "feat(skills): add new style-guide skill
+
+- Added Python and TypeScript style guides
+- Updated CHANGELOG.md with v0.3.0 entry"
+```

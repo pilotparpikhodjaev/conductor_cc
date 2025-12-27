@@ -15,7 +15,7 @@
         "url": "https://github.com/pilotparpikhodjaev/conductor_cc.git"
       },
       "description": "Conductor: Context-driven development for Claude Code",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "author": {
         "name": "Javokhirbek | TenXEngineer",
         "email": "dev.parpikhodjaev@gmail.com"
