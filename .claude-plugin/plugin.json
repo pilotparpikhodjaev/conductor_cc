@@ -1,12 +1,24 @@
 {
   "name": "conductor",
   "description": "Conductor: Context-driven development for Claude Code - Measure twice, code once",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "author": {
     "name": "Javokhirbek | TenXEngineer",
     "email": "dev.parpikhodjaev@gmail.com"
   },
   "repository": "https://github.com/pilotparpikhodjaev/conductor_cc",
-  "keywords": ["conductor", "context-driven", "planning", "TDD", "workflow"]
+  "keywords": [
+    "conductor",
+    "context-driven",
+    "planning",
+    "TDD",
+    "workflow",
+    "skills"
+  ],
+  "skills": [
+    "skills/style-guide",
+    "skills/context-loader",
+    "skills/track-manager"
+  ]
 }
